@@ -1,5 +1,5 @@
 import { db } from "@/utils/db";
-import { UserAnswer } from "@/db/schema/userAnswers";
+import { UserAnswers } from "@/utils/schema";
 
 export async function POST(req) {
   try {
@@ -12,7 +12,7 @@ export async function POST(req) {
       );
     }
 
-    await db.insert(UserAnswer).values({
+    await db.insert(UserAnswers).values({
       mockId,
       questionId,
       userAnswer,
